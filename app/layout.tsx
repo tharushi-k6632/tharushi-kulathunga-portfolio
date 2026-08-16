@@ -16,7 +16,7 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export const metadata: Metadata = {
-  title: 'Tharushi Kulathunga — IT, Management & Data Analysis',
+  title: 'Tharushi Kulathunga | IT, Management & Data Analysis',
   description:
     'Portfolio of Tharushi Kulathunga, an undergraduate bridging the gap between Technology, Management, and Data Analysis.',
   generator: 'v0.app',

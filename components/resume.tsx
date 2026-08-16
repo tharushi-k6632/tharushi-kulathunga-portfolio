@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { Download } from 'lucide-react'
 import { resume } from '@/lib/content'
 
@@ -16,7 +17,7 @@ export function Resume() {
           <p className="mx-auto mt-4 max-w-xl leading-relaxed text-muted-foreground text-pretty">
             {resume.body}
           </p>
-          <a
+          <Link
             href={resume.resumeFile}
             download
             className="group mt-8 inline-flex items-center gap-3 rounded-xl bg-gradient-to-r from-neon to-neon-bright px-8 py-4 text-lg font-semibold text-background transition-all duration-300 hover:scale-105 hover:shadow-[0_0_36px_-2px_var(--neon)]"
@@ -26,7 +27,7 @@ export function Resume() {
               className="transition-transform duration-300 group-hover:translate-y-0.5"
             />
             {resume.buttonLabel}
-          </a>
+          </Link>
         </div>
       </div>
     </section>

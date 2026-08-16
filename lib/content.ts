@@ -65,7 +65,7 @@ export const skills = [
   },
   {
     title: 'Tools & Platforms',
-    items: ['GitHub', 'Microsoft Office', 'Canva', 'Figma', 'Jira', 'Trello'],
+    items: ['GitHub', 'Microsoft Office', 'Canva', 'Figma', 'Java', 'C++', 'React', 'Jamovi'],
   },
   {
     title: 'Management & Methodologies',
@@ -88,7 +88,7 @@ export const projects = [
 ]
 
 /* -------------------------------------------------------------------------- */
-/*  EDUCATION — chronological timeline                                        */
+/*  EDUCATION - chronological timeline                                        */
 /* -------------------------------------------------------------------------- */
 export const education = [
   {
@@ -101,37 +101,108 @@ export const education = [
   },
   {
     school: 'Visakha Vidyalaya, Colombo 04',
-    degree: 'G.C.E. Advanced Level — Physical Science with ICT',
+    degree: 'G.C.E. Advanced Level - Physical Science with ICT',
   },
   {
     school: "St. Lawrence's Convent, Colombo 06",
-    degree: 'Secondary Education',
+    degree: 'Primary and Secondary Education',
   },
 ]
 
 /* -------------------------------------------------------------------------- */
-/*  EXPERIENCE — leadership & extracurricular involvement                     */
+/*  EXPERIENCE - leadership & extracurricular involvement                     */
 /* -------------------------------------------------------------------------- */
-export const experience = [
+export interface IndustrialTimelineStep {
+  year: string
+  role: string
+  description: string
+}
+
+export interface ExperienceItem {
+  org: string
+  role?: string
+  body?: string
+  isTimeline?: boolean
+  timeline?: IndustrialTimelineStep[]
+  isCompere?: boolean
+  events?: string[]
+}
+
+export const experience: ExperienceItem[] = [
   {
     org: 'hackX 11.0',
+    role: 'Chief Coordinator',
     body: 'Chief Coordinator, supporting the planning, coordination, and execution of the national-level hackathon and startup challenge.',
   },
   {
     org: 'ideasprint 2026',
+    role: 'Organizing Committee Member',
     body: 'Organizing Committee Member, contributing to event planning, coordination, and participant engagement.',
   },
   {
     org: 'Rotaract Club of APIIT',
+    role: 'Member',
     body: 'Member, contributing to community-focused initiatives, events, and extracurricular activities.',
   },
   {
     org: 'Industrial Management Science Students’ Association',
-    body: 'Committee Member in 2025 and Member in 2026, contributing to content writing, event coordination, and association activities.',
+    isTimeline: true,
+    timeline: [
+      {
+        year: '2025',
+        role: 'Committee Member',
+        description: 'Contributed to content writing, event coordination, and association activities.',
+      },
+      {
+        year: '2026',
+        role: 'Member',
+        description: 'Active member contributing to association initiatives, publications, and event support.',
+      },
+    ],
   },
   {
-    org: 'IMSSA Events',
-    body: 'Compered the IMSSA AGM 2025 and contributed to events including SECRET OPS: CODFEST 2025, IM Talent Show 2025, and INCO 2026.',
+    org: 'Compere',
+    body: 'Compered key university and association events including:',
+    isCompere: true,
+    events: [
+      'IMSSA AGM 2025',
+      'SECRET OPS: CODFEST 2025',
+      'IM Talent Show 2025',
+      'INCO 2026',
+    ],
+  },
+]
+
+export const experienceGallery = [
+  {
+    src: '/experiences/exp-secret-ops.jpg',
+    alt: 'Compering at SECRET OPS: CODFEST 2025',
+    title: 'SECRET OPS: CODFEST 2025',
+    subtitle: 'Event Compere',
+  },
+  {
+    src: '/experiences/exp-agm-podium.jpg',
+    alt: 'Hosting IMSSA AGM 2025 on stage',
+    title: 'IMSSA AGM 2025',
+    subtitle: 'Stage Host',
+  },
+  {
+    src: '/experiences/exp-stage-hosting.jpg',
+    alt: 'Compering University Event',
+    title: 'Stage Hosting & Announcing',
+    subtitle: 'Master of Ceremonies',
+  },
+  {
+    src: '/experiences/exp-agm-certificate.jpg',
+    alt: 'Receiving Appreciation Certificate at IMSSA AGM 2026',
+    title: 'IMSSA AGM 2026 Certificate',
+    subtitle: 'Compere Recognition',
+  },
+  {
+    src: '/experiences/exp-agm-speaking.jpg',
+    alt: 'Speaking at IMSSA AGM 2025',
+    title: 'IMSSA AGM 2025 Address',
+    subtitle: 'Event Presenter',
   },
 ]
 
@@ -147,12 +218,12 @@ export const certifications = [
   },
   {
     icon: 'medal',
-    title: 'Trinity College London Grade 6 — Performing Text',
+    title: 'Trinity College London Grade 6 - Performing Text',
     meta: 'Completed',
   },
   {
     icon: 'medal',
-    title: 'IWMS Grade 6 — Spoken English',
+    title: 'IWMS Grade 6 - Spoken English',
     meta: 'Completed',
   },
 ]
