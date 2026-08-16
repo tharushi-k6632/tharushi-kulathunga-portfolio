@@ -22,12 +22,12 @@ export const profile = {
   // Shown in the top-left of the navbar, e.g. "TK."
   initials: 'TK',
   // Small pill above the headline in the hero
-  availabilityBadge: 'Available for opportunities',
+  availabilityBadge: 'Open to opportunities',
   // Main hero headline (your name is highlighted automatically)
   heroGreeting: "Hi, I'm",
   // Short summary under the headline
   heroSummary:
-    'An undergraduate bridging the gap between Technology, Management, and Data Analysis.',
+    'An undergraduate bridging Technology, Management, and Data to turn ideas into impactful solutions.',
   // Path to your photo (place the image file in the /public folder)
   photo: '/tharushi-portrait.png',
   photoAlt: 'Portrait of Tharushi Kulathunga',
@@ -41,17 +41,17 @@ export const about = [
   {
     icon: 'graduation',
     title: 'Background',
-    body: 'Currently pursuing a BSc in Information Technology at the University of Kelaniya and a BSc (Hons) in International Business Management at the University of Staffordshire (APIIT Sri Lanka).',
+    body: 'Currently pursuing a BSc (Hons) in International Business Management at the University of Staffordshire through APIIT Sri Lanka, alongside a BSc in Information Technology at the University of Kelaniya.',
   },
   {
     icon: 'target',
     title: 'Career Goals',
-    body: 'Aspiring to leverage management frameworks, technical tools, and data-driven insights to lead impactful tech and business initiatives.',
+    body: 'Aspiring to combine business knowledge, technology, and data-driven insights to contribute to impactful projects and lead technology-driven business initiatives.',
   },
   {
     icon: 'sparkles',
     title: 'Technical Interests',
-    body: 'Project Management, Business Analysis, and Data Analysis.',
+    body: 'Project Management, Business Analysis, Data Analysis, and Technology-driven Business Solutions.',
   },
 ]
 
@@ -65,7 +65,7 @@ export const skills = [
   },
   {
     title: 'Tools & Platforms',
-    items: ['GitHub', 'DoIT', 'TaskHub', 'PickMe', 'Uber', 'Zoom', 'Google Meet'],
+    items: ['GitHub', 'Microsoft Office', 'Canva', 'Figma', 'Jira', 'Trello'],
   },
   {
     title: 'Management & Methodologies',
@@ -79,24 +79,10 @@ export const skills = [
 /* -------------------------------------------------------------------------- */
 export const projects = [
   {
-    title: 'hackX 2026',
-    role: 'Project Manager',
-    body: 'Coordinated partnerships with government science foundations and private tech solutions.',
-    githubUrl: 'https://github.com/tharushi-k6632',
-    liveUrl: '',
-  },
-  {
-    title: 'Exposition Project (DoIT System)',
-    role: 'Project Manager',
-    body: 'Managed task tracking and project delivery.',
-    githubUrl: 'https://github.com/tharushi-k6632',
-    liveUrl: '',
-  },
-  {
-    title: 'Rootcode Designathon',
-    role: 'Designer',
-    body: 'Developed and submitted design prototypes during an intensive hackathon challenge.',
-    githubUrl: 'https://github.com/tharushi-k6632',
+    title: 'DoIT Task Management System',
+    role: 'DevOps & QA',
+    body: 'Contributed to DevOps and quality assurance activities, supporting task management, testing, and reliable project delivery.',
+    githubUrl: 'https://github.com/T-Bhagya/task-management-system',
     liveUrl: '',
   },
 ]
@@ -106,38 +92,46 @@ export const projects = [
 /* -------------------------------------------------------------------------- */
 export const education = [
   {
-    school: 'University of Kelaniya',
-    degree: 'BSc in Information Technology',
-  },
-  {
     school: 'University of Staffordshire (APIIT Sri Lanka)',
     degree: 'BSc (Hons) in International Business Management',
   },
   {
-    school: 'Wisdom Business Academy',
-    degree: 'CIMA Certification (Ongoing)',
+    school: 'University of Kelaniya',
+    degree: 'BSc in Information Technology',
+  },
+  {
+    school: 'Visakha Vidyalaya, Colombo 04',
+    degree: 'G.C.E. Advanced Level — Physical Science with ICT',
+  },
+  {
+    school: "St. Lawrence's Convent, Colombo 06",
+    degree: 'Secondary Education',
   },
 ]
 
 /* -------------------------------------------------------------------------- */
-/*  EXPERIENCE — leadership & volunteering                                    */
+/*  EXPERIENCE — leadership & extracurricular involvement                     */
 /* -------------------------------------------------------------------------- */
 export const experience = [
   {
-    org: 'ideasprint (Team Red)',
-    body: 'Participated and evaluated proposals.',
+    org: 'hackX 11.0',
+    body: 'Chief Coordinator, supporting the planning, coordination, and execution of the national-level hackathon and startup challenge.',
   },
   {
-    org: 'IM Talents',
-    body: 'Scripting and compering for organizational events.',
+    org: 'ideasprint 2026',
+    body: 'Organizing Committee Member, contributing to event planning, coordination, and participant engagement.',
   },
   {
-    org: 'IM Dansala',
-    body: 'Event planning, logistics, and drafting official documentation.',
+    org: 'Rotaract Club of APIIT',
+    body: 'Member, contributing to community-focused initiatives, events, and extracurricular activities.',
   },
   {
-    org: "Industrial Management Students' Association",
-    body: 'Drafted official vision and mission statements and researched student development interventions.',
+    org: 'Industrial Management Science Students’ Association',
+    body: 'Committee Member in 2025 and Member in 2026, contributing to content writing, event coordination, and association activities.',
+  },
+  {
+    org: 'IMSSA Events',
+    body: 'Compered the IMSSA AGM 2025 and contributed to events including SECRET OPS: CODFEST 2025, IM Talent Show 2025, and INCO 2026.',
   },
 ]
 
@@ -153,10 +147,20 @@ export const certifications = [
   },
   {
     icon: 'medal',
-    title: 'Rootcode Designathon Participant',
-    meta: 'August 2024',
+    title: 'Trinity College London Grade 6 — Performing Text',
+    meta: 'Completed',
+  },
+  {
+    icon: 'medal',
+    title: 'IWMS Grade 6 — Spoken English',
+    meta: 'Completed',
   },
 ]
+
+export const certificationsLink = {
+  label: 'View all certifications on LinkedIn',
+  href: 'https://www.linkedin.com/in/tharushi-kulathunga-4402622b8/details/certifications/',
+}
 
 /* -------------------------------------------------------------------------- */
 /*  RESUME / CV                                                               */

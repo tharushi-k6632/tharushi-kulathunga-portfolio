@@ -1,6 +1,6 @@
-import { Award, Medal } from 'lucide-react'
+import { Award, Medal, ExternalLink } from 'lucide-react'
 import { SectionHeading } from './section-heading'
-import { certifications as ITEMS } from '@/lib/content'
+import { certifications as ITEMS, certificationsLink } from '@/lib/content'
 
 const ICONS = {
   award: Award,
@@ -36,6 +36,19 @@ export function Certifications() {
             )
           })}
         </div>
+        {certificationsLink.href && (
+          <div className="mt-8 flex justify-center">
+            <a
+              href={certificationsLink.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg border border-neon/40 px-5 py-2.5 text-sm text-foreground transition-all duration-300 hover:scale-[1.03] hover:bg-neon/15 hover:shadow-[0_0_16px_-3px_var(--neon)]"
+            >
+              {certificationsLink.label}
+              <ExternalLink size={16} />
+            </a>
+          </div>
+        )}
       </div>
     </section>
   )
