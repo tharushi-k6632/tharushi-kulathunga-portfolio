@@ -1,0 +1,81 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+
+  --color-neon: var(--neon);
+  --color-neon-bright: var(--neon-bright);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+}
+
+:root {
+  color-scheme: dark;
+  --background: oklch(0.13 0.02 265);
+  --foreground: oklch(0.97 0.01 250);
+  --card: oklch(0.18 0.02 265);
+  --card-foreground: oklch(0.97 0.01 250);
+  --muted: oklch(0.28 0.02 265);
+  --muted-foreground: oklch(0.72 0.03 255);
+  --border: oklch(0.7 0.05 255 / 15%);
+  --ring: oklch(0.68 0.19 245);
+
+  /* Electric / neon blue accents */
+  --neon: oklch(0.68 0.19 245);
+  --neon-bright: oklch(0.78 0.16 230);
+
+  --radius: 0.75rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+    /* offset for sticky nav when jumping to anchors */
+    scroll-padding-top: 5.5rem;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  /* Glassmorphism panel */
+  .glass {
+    background-color: color-mix(in oklch, white 6%, transparent);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid color-mix(in oklch, white 12%, transparent);
+  }
+
+  .glow-blue {
+    box-shadow:
+      0 0 0 1px color-mix(in oklch, var(--neon) 40%, transparent),
+      0 0 24px -4px color-mix(in oklch, var(--neon) 60%, transparent);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 24px color-mix(in oklch, var(--neon) 55%, transparent);
+  }
+}
