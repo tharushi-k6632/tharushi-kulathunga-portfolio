@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { experienceGallery } from '@/lib/content'
+import { getAssetUrl } from '@/lib/utils'
 
 export function ExperienceMarquee() {
   // Duplicate array to ensure seamless infinite looping marquee
@@ -21,7 +22,7 @@ export function ExperienceMarquee() {
               className="glass group relative h-80 w-60 flex-shrink-0 overflow-hidden rounded-2xl border border-neon/30 transition-all duration-300 hover:scale-[1.03] hover:glow-blue"
             >
               <Image
-                src={item.src}
+                src={getAssetUrl(item.src)}
                 alt={item.alt}
                 fill
                 sizes="240px"

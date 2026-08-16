@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Download } from 'lucide-react'
 import { resume } from '@/lib/content'
+import { getAssetUrl } from '@/lib/utils'
 
 export function Resume() {
   return (
@@ -18,7 +19,7 @@ export function Resume() {
             {resume.body}
           </p>
           <Link
-            href={resume.resumeFile}
+            href={getAssetUrl(resume.resumeFile)}
             download
             className="group mt-8 inline-flex items-center gap-3 rounded-xl bg-gradient-to-r from-neon to-neon-bright px-8 py-4 text-lg font-semibold text-background transition-all duration-300 hover:scale-105 hover:shadow-[0_0_36px_-2px_var(--neon)]"
           >

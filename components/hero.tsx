@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { ArrowDown, Mail } from 'lucide-react'
 import { profile } from '@/lib/content'
+import { getAssetUrl } from '@/lib/utils'
 
 export function Hero() {
   return (
@@ -66,7 +67,7 @@ export function Hero() {
             <div className="glass relative overflow-hidden rounded-[2rem] p-2 glow-blue">
               <div className="overflow-hidden rounded-[1.6rem] ring-1 ring-neon/40">
                 <Image
-                  src={profile.photo || "/placeholder.svg"}
+                  src={getAssetUrl(profile.photo || "/placeholder.svg")}
                   alt={profile.photoAlt}
                   width={420}
                   height={520}
