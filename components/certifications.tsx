@@ -1,18 +1,11 @@
 import { Award, Medal } from 'lucide-react'
 import { SectionHeading } from './section-heading'
+import { certifications as ITEMS } from '@/lib/content'
 
-const ITEMS = [
-  {
-    icon: Award,
-    title: 'Pursuing CIMA Certification',
-    meta: 'In progress',
-  },
-  {
-    icon: Medal,
-    title: 'Rootcode Designathon Participant',
-    meta: 'August 2024',
-  },
-]
+const ICONS = {
+  award: Award,
+  medal: Medal,
+} as const
 
 export function Certifications() {
   return (
@@ -23,7 +16,9 @@ export function Certifications() {
           title="Certifications & Achievements"
         />
         <div className="grid gap-6 sm:grid-cols-2">
-          {ITEMS.map(({ icon: Icon, title, meta }) => (
+          {ITEMS.map(({ icon, title, meta }) => {
+            const Icon = ICONS[icon as keyof typeof ICONS]
+            return (
             <article
               key={title}
               className="glass flex items-center gap-4 rounded-2xl p-6 transition-all duration-300 hover:glow-blue"
@@ -38,7 +33,8 @@ export function Certifications() {
                 </p>
               </div>
             </article>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>

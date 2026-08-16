@@ -1,23 +1,12 @@
 import { GraduationCap, Target, Sparkles } from 'lucide-react'
 import { SectionHeading } from './section-heading'
+import { about } from '@/lib/content'
 
-const CARDS = [
-  {
-    icon: GraduationCap,
-    title: 'Background',
-    body: 'Currently pursuing a BSc in Information Technology at the University of Kelaniya and a BSc (Hons) in International Business Management at the University of Staffordshire (APIIT Sri Lanka).',
-  },
-  {
-    icon: Target,
-    title: 'Career Goals',
-    body: 'Aspiring to leverage management frameworks, technical tools, and data-driven insights to lead impactful tech and business initiatives.',
-  },
-  {
-    icon: Sparkles,
-    title: 'Technical Interests',
-    body: 'Project Management, Business Analysis, and Data Analysis.',
-  },
-]
+const ICONS = {
+  graduation: GraduationCap,
+  target: Target,
+  sparkles: Sparkles,
+} as const
 
 export function About() {
   return (
@@ -25,7 +14,9 @@ export function About() {
       <div className="mx-auto max-w-6xl">
         <SectionHeading eyebrow="Who I Am" title="About Me" />
         <div className="grid gap-6 md:grid-cols-3">
-          {CARDS.map(({ icon: Icon, title, body }) => (
+          {about.map(({ icon, title, body }) => {
+            const Icon = ICONS[icon as keyof typeof ICONS]
+            return (
             <article
               key={title}
               className="glass group rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1 hover:glow-blue"
@@ -38,7 +29,8 @@ export function About() {
                 {body}
               </p>
             </article>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>

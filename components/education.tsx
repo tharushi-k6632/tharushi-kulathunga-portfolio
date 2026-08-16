@@ -1,19 +1,5 @@
 import { SectionHeading } from './section-heading'
-
-const TIMELINE = [
-  {
-    school: 'University of Kelaniya',
-    degree: 'BSc in Information Technology',
-  },
-  {
-    school: 'University of Staffordshire (APIIT Sri Lanka)',
-    degree: 'BSc (Hons) in International Business Management',
-  },
-  {
-    school: 'Wisdom Business Academy',
-    degree: 'CIMA Certification (Ongoing)',
-  },
-]
+import { education as TIMELINE } from '@/lib/content'
 
 export function Education() {
   return (

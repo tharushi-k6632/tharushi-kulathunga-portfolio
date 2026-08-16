@@ -1,24 +1,6 @@
 import { Users } from 'lucide-react'
 import { SectionHeading } from './section-heading'
-
-const ITEMS = [
-  {
-    org: 'ideasprint (Team Red)',
-    body: 'Participated and evaluated proposals.',
-  },
-  {
-    org: 'IM Talents',
-    body: 'Scripting and compering for organizational events.',
-  },
-  {
-    org: 'IM Dansala',
-    body: 'Event planning, logistics, and drafting official documentation.',
-  },
-  {
-    org: "Industrial Management Students' Association",
-    body: 'Drafted official vision and mission statements and researched student development interventions.',
-  },
-]
+import { experience as ITEMS } from '@/lib/content'
 
 export function Experience() {
   return (

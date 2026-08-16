@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react'
+import { profile } from '@/lib/content'
 
 const LINKS = [
   { id: 'home', label: 'Home' },
@@ -38,7 +39,7 @@ export function SiteNav() {
           href="#home"
           className="font-display text-lg font-bold tracking-tight text-foreground transition-colors hover:text-neon-bright"
         >
-          TK<span className="text-neon">.</span>
+          {profile.initials}<span className="text-neon">.</span>
         </a>
 
         <ul className="hidden items-center gap-1 lg:flex">

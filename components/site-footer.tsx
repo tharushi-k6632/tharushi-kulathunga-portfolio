@@ -1,26 +1,12 @@
 import { Mail } from 'lucide-react'
 import { GithubIcon, LinkedinIcon } from './brand-icons'
+import { contact, profile } from '@/lib/content'
 
-const CONTACTS = [
-  {
-    icon: Mail,
-    label: 'Email',
-    value: 'tharushi@gmail.com',
-    href: 'mailto:tharushi@gmail.com',
-  },
-  {
-    icon: LinkedinIcon,
-    label: 'LinkedIn',
-    value: 'tharushi-kulathunga',
-    href: 'https://www.linkedin.com/in/tharushi-kulathunga-4402622b8/',
-  },
-  {
-    icon: GithubIcon,
-    label: 'GitHub',
-    value: 'tharushi-k6632',
-    href: 'https://github.com/tharushi-k6632',
-  },
-]
+const ICONS = {
+  mail: Mail,
+  linkedin: LinkedinIcon,
+  github: GithubIcon,
+} as const
 
 export function SiteFooter() {
   return (
@@ -32,12 +18,13 @@ export function SiteFooter() {
               Get in touch
             </p>
             <h2 className="mt-3 font-display text-3xl font-bold text-balance sm:text-4xl">
-              Let&apos;s connect
+              {contact.heading}
             </h2>
           </div>
 
           <div className="mx-auto mt-10 grid max-w-3xl gap-4 sm:grid-cols-3">
-            {CONTACTS.map(({ icon: Icon, label, value, href }) => {
+            {contact.items.map(({ icon, label, value, href }) => {
+              const Icon = ICONS[icon as keyof typeof ICONS]
               const external = href.startsWith('http')
               return (
                 <a
@@ -62,7 +49,7 @@ export function SiteFooter() {
           </div>
 
           <div className="mt-10 border-t border-white/10 pt-6 text-center text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Tharushi Kulathunga. All rights
+            © {new Date().getFullYear()} {profile.fullName}. All rights
             reserved.
           </div>
         </div>

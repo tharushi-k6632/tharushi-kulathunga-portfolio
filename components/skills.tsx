@@ -1,19 +1,5 @@
 import { SectionHeading } from './section-heading'
-
-const GROUPS = [
-  {
-    title: 'Core Focus',
-    items: ['Project Management', 'Business Analysis', 'Data Analysis'],
-  },
-  {
-    title: 'Tools & Platforms',
-    items: ['GitHub', 'DoIT', 'TaskHub', 'PickMe', 'Uber', 'Zoom', 'Google Meet'],
-  },
-  {
-    title: 'Management & Methodologies',
-    items: ['Agile Project Management', 'Event Coordination', 'Business Strategy'],
-  },
-]
+import { skills as GROUPS } from '@/lib/content'
 
 export function Skills() {
   return (

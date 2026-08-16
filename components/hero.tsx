@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { ArrowDown, Mail } from 'lucide-react'
+import { profile } from '@/lib/content'
 
 export function Hero() {
   return (
@@ -21,19 +22,18 @@ export function Hero() {
         <div className="order-2 md:order-1">
           <span className="glass inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-medium tracking-wide text-neon-bright">
             <span className="h-2 w-2 rounded-full bg-neon shadow-[0_0_10px_var(--neon)]" />
-            Available for opportunities
+            {profile.availabilityBadge}
           </span>
 
           <h1 className="mt-6 font-display text-4xl font-bold leading-tight text-balance sm:text-5xl lg:text-6xl">
-            Hi, I&apos;m{' '}
+            {profile.heroGreeting}{' '}
             <span className="bg-gradient-to-r from-neon to-neon-bright bg-clip-text text-transparent text-glow">
-              Tharushi Kulathunga.
+              {profile.fullName}.
             </span>
           </h1>
 
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground text-pretty">
-            An undergraduate bridging the gap between Technology, Management, and
-            Data Analysis.
+            {profile.heroSummary}
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -66,8 +66,8 @@ export function Hero() {
             <div className="glass relative overflow-hidden rounded-[2rem] p-2 glow-blue">
               <div className="overflow-hidden rounded-[1.6rem] ring-1 ring-neon/40">
                 <Image
-                  src="/tharushi-portrait.png"
-                  alt="Portrait of Tharushi Kulathunga"
+                  src={profile.photo || "/placeholder.svg"}
+                  alt={profile.photoAlt}
                   width={420}
                   height={520}
                   priority

@@ -1,4 +1,5 @@
 import { Download } from 'lucide-react'
+import { resume } from '@/lib/content'
 
 export function Resume() {
   return (
@@ -10,14 +11,13 @@ export function Resume() {
         />
         <div className="glass rounded-3xl px-6 py-14 text-center glow-blue sm:px-12">
           <h2 className="font-display text-3xl font-bold text-balance sm:text-4xl">
-            Interested in working together?
+            {resume.heading}
           </h2>
           <p className="mx-auto mt-4 max-w-xl leading-relaxed text-muted-foreground text-pretty">
-            Grab a copy of my resume for a full overview of my experience,
-            skills, and academic journey.
+            {resume.body}
           </p>
           <a
-            href="/tharushi-kulathunga-resume.pdf"
+            href={resume.resumeFile}
             download
             className="group mt-8 inline-flex items-center gap-3 rounded-xl bg-gradient-to-r from-neon to-neon-bright px-8 py-4 text-lg font-semibold text-background transition-all duration-300 hover:scale-105 hover:shadow-[0_0_36px_-2px_var(--neon)]"
           >
@@ -25,7 +25,7 @@ export function Resume() {
               size={20}
               className="transition-transform duration-300 group-hover:translate-y-0.5"
             />
-            Download Resume
+            {resume.buttonLabel}
           </a>
         </div>
       </div>

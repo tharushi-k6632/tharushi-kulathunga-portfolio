@@ -1,24 +1,7 @@
 import { ExternalLink, FolderGit2 } from 'lucide-react'
 import { SectionHeading } from './section-heading'
 import { GithubIcon } from './brand-icons'
-
-const PROJECTS = [
-  {
-    title: 'hackX 2026',
-    role: 'Project Manager',
-    body: 'Coordinated partnerships with government science foundations and private tech solutions.',
-  },
-  {
-    title: 'Exposition Project (DoIT System)',
-    role: 'Project Manager',
-    body: 'Managed task tracking and project delivery.',
-  },
-  {
-    title: 'Rootcode Designathon',
-    role: 'Designer',
-    body: 'Developed and submitted design prototypes during an intensive hackathon challenge.',
-  },
-]
+import { projects as PROJECTS } from '@/lib/content'
 
 export function Projects() {
   return (
@@ -45,24 +28,28 @@ export function Projects() {
               </p>
 
               <div className="mt-6 flex gap-3">
-                <a
-                  href="https://github.com/tharushi-k6632"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex flex-1 items-center justify-center gap-2 rounded-lg border border-neon/40 px-3 py-2 text-sm text-foreground transition-all duration-300 hover:scale-[1.03] hover:bg-neon/15 hover:shadow-[0_0_16px_-3px_var(--neon)]"
-                >
-                  <GithubIcon size={16} />
-                  GitHub
-                </a>
-                <a
-                  href="https://github.com/tharushi-k6632"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex flex-1 items-center justify-center gap-2 rounded-lg border border-neon/40 px-3 py-2 text-sm text-foreground transition-all duration-300 hover:scale-[1.03] hover:bg-neon/15 hover:shadow-[0_0_16px_-3px_var(--neon)]"
-                >
-                  <ExternalLink size={16} />
-                  Live Demo
-                </a>
+                {project.githubUrl && (
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex flex-1 items-center justify-center gap-2 rounded-lg border border-neon/40 px-3 py-2 text-sm text-foreground transition-all duration-300 hover:scale-[1.03] hover:bg-neon/15 hover:shadow-[0_0_16px_-3px_var(--neon)]"
+                  >
+                    <GithubIcon size={16} />
+                    GitHub
+                  </a>
+                )}
+                {project.liveUrl && (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex flex-1 items-center justify-center gap-2 rounded-lg border border-neon/40 px-3 py-2 text-sm text-foreground transition-all duration-300 hover:scale-[1.03] hover:bg-neon/15 hover:shadow-[0_0_16px_-3px_var(--neon)]"
+                  >
+                    <ExternalLink size={16} />
+                    Live Demo
+                  </a>
+                )}
               </div>
             </article>
           ))}
